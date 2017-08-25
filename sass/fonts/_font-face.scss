@@ -21,3 +21,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Stranger';
+  src: url('../../fonts/Stranger/BenguiatITCW01-BoldCn.eot');
+  src: url('../../fonts/Stranger/BenguiatITCW01-BoldCn.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/Stranger/BenguiatITCW01-BoldCn.woff2') format('woff2'),
+  url('../../fonts/Stranger/BenguiatITCW01-BoldCn.woff') format('woff'),
+  url('../../fonts/Stranger/BenguiatITCW01-BoldCn.svg#BenguiatITCW01-BoldCn') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
