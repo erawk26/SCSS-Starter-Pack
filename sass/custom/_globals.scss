@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  @include marding();
+  //overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font: $base-font-size/$base-line-height $fontBody;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fontHead;
+  font-weight: $regular;
+}
+h1{font-size:$h1-font-size}
+h2{font-size:$h2-font-size}
+h3{font-size:$h3-font-size}
+h4{font-size:$h4-font-size}
+h5{font-size:$h5-font-size}
+h6{font-size:$h6-font-size}
+
+h1, h2, h3 {
+  color: $primary;
+}
+
+a {
+  color: $primary;
+  text-decoration:none;
+  &:hover,&:visited,&:active,&:focus {
+    color: darken($primary, 10)
+  }
+}
+input.form-control {
+  @include placeholder(white);
+}
+
+.btn-arrow {
+  font-family: $fontBold;
+  text-transform: uppercase;
+  span {
+    @include transition(all .5s ease-in);
+    padding-left: 6px;
+  }
+  &:hover {
+    span {
+      padding-left: 10px;
+    }
+  }
+  &:before {
+    font-family: $fontIcon;
+    content: '\f061';
+  }
+}
+
+.nav li > a, a {
+  &:focus, &:hover {
+    outline-width: 0;
+    background: none;
+    text-decoration: none;
+  }
+}
+
+//follow menu sizing
+ul.platforms {
+  span {
+    font-size: 22px;
+    &.fa-pinterest {
+      font-size: 26px;
+    }
+    width: 30px;
+    height: 30px;
+    @include border-radius(50%);
+    @include flex();
+  }
+}
+//share menu
+.share-container{
+    @include flex(flex-end,flex-end);
+    overflow:visible;
+    height: 0;
+    position:absolute;
+    bottom:15px;
+    right:15px;
+}
+a.share {
+  padding:0 4px;
+  span {
+    @include flex();
+    @include border-radius(50%);
+    border:2px solid $secondary;
+    color: $secondary;
+    background: $quadrary;
+    text-align: center;
+    font-size:16px;
+    width: 32px;
+    height: 32px;
+  }
+}
+.addtoany_list.a2a_kit_size_32 a > span {
+  border-radius: 50%;
+  border:2px solid $secondary;
+  color: $secondary;
+  background: $quadrary;
+}
+.share-menu{display:none}
+.cbox-hidden{//inline colorbox html wrapper
+  display:none;}
+.cbox-inline {//colorbox html content
+  .title {
+    margin-top: 0;
+    font-family: $fontBold;
+    color: $primary
+  }
+  padding: 2%;
+  background: $secondary
+}

@@ -1,0 +1,44 @@
+// Colors
+$red:#e31937;
+$white:#f8f2e5;
+$black:#15383b;
+$faded-green:#71a89b;
+$tan:#F5EEDC;
+$darker-tan:#ce9856;
+$maroon:#7D0018;
+$gray-lighter: #b7b7b7;
+$gray: #797979;
+$gray-darker: #4e4e4e;
+$gray-darkest:#3c3c3c;
+$light-blue: #00a1f2;
+$blue: #3e88c8;
+$blue-dark: #006cb4;
+$blue-darker: #0061AC;
+$green: #009660;
+$green-light: #24b46f;
+$green-dark: #056b45;
+$orange: #c35219;
+$gray: #e8e8e8;
+
+//Site Colors
+$primary:$green;
+$secondary:$white;
+$trinary:$black;
+$quadrary:$blue;
+$quinary:$faded-green;
+
+//Font Colors
+$body-font-color:$trinary;
+$heading-font-color:$primary;
+$alternate-font-color:$quadrary;
+
+//shorthand color codes
+$c1:$primary;
+$c2:$secondary;
+$c3:$trinary;
+$c4:$quadrary;
+$c5:$quinary;
+$bfc:$body-font-color;
+$hfc:$heading-font-color;
+$afc:$alternate-font-color;
+

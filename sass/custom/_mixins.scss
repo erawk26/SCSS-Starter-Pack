@@ -1,0 +1,127 @@
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+
+    color: $color;
+  }
+}
+// Margin and Padding combined
+@mixin marding($mg:0, $pd:0) {
+  margin: $mg;
+  padding: $pd;
+}
+
+//FLEXBOX MIXIN
+
+/*  values:
+    $display: flex | inline-flex
+    $direction: row(default) | row-reverse | column | column-reverse
+    $wrap: nowrap(default) | wrap | wrap-reverse
+    $justify: flex-start(default) | flex-end | center | space-between | space-around
+    $align: flex-start | flex-end | center | baseline | stretch (default)
+    $aligncontent: flex-start | flex-end | center | space-between | space-around | stretch (default)
+*/
+@mixin flex($justify: center, $align: center, $direction: false, $wrap: false, $display: flex, $aligncontent: false) {
+  @if $display == flex {
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  @else {
+    display: -ms-inline-flexbox;
+    display: -moz-inline-flex;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+  @if $direction { @include flexprop(flex-direction, $direction); }
+  @if $wrap { @include flexprop(flex-wrap, $wrap); }
+  @if $justify { @include flexprop(justify-content, $justify); }
+  @if $align { @include flexprop(align-items, $align); }
+  @if $aligncontent { @include flexprop(align-content, $aligncontent); }
+}
+@mixin flexchild($flexgrow: 1, $flexshrink: 0, $flexbasis: auto, $alignself: false, $order: false) {
+  @if $order { @include flexprop(order, $order); }
+  @include flexprop(flex, ($flexgrow $flexshrink $flexbasis));
+  @if $alignself { @include flexprop(align-self, $alignself); }
+}
+@function ieflexvalue($value) {
+  @if $value == flex-start { @return start; }
+  @if $value == flex-end { @return end; }
+  @if $value == space-between { @return justify; }
+  @if $value == space-around { @return distribute; }
+  @if $value == justify-content { @return flex-pack; }
+  @if $value == align-items { @return flex-align; }
+  @if $value == align-content { @return flex-line-pack; }
+  @if $value == align-self { @return flex-item-align; }
+  @if $value == order { @return flex-order; }
+  @return $value;
+}
+@mixin flexprop($prop, $value) {
+  -webkit-#{$prop}: $value;
+  -moz-#{$prop}: $value;
+  -ms-#{ieflexvalue($prop)}: ieflexvalue($value);
+  #{$prop}: $value;
+}
+
+////////////////////////////// END of FlexBox Mixin ///////////////////////////////////
+//annimated underline
+@mixin underline($color, $size:2px, $distance:3px) {
+  &:after {
+    opacity: 0;
+    transition: all .5s ease-out;
+    content: '';
+    display: block;
+    position: relative;
+    top: auto;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: $size;
+    background: $color;
+  }
+  &:hover,&:focus {
+    &:after {
+      opacity: 1;
+      bottom: $distance;
+    }
+  }
+}
+@mixin btn-clr($c1,$c2,$border:0,$transition:color .5s ease-out) {
+  color: $c2;
+  background: $c1;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+  &:hover, &:focus {
+    color: $c1;
+    background: $c2;
+    border: $border solid $c1;
+  }
+  &:active, &:visited {
+    color: $c2;
+    background-color: $c1;
+  }
+}
+@mixin grey-gradient($src,$size:cover,$position:center){
+  @include background-image(linear-gradient(left top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.05) 23%,rgba(0,0,0,0) 100%),url($src));
+  background-position: $position;
+  background-size: $size;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+}
+@mixin stripes($color:#333, $size:3px, $angle:-45deg) {
+  $colorAlt: lighten($color, 15);
+  background: repeating-linear-gradient( $angle, $color, $color $size, $colorAlt $size, $colorAlt ($size * 2));
+}

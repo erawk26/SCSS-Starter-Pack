@@ -1,5 +1,16 @@
+### SCSS files
 .sass-cache/
 *.css.map
+
+### Composer files
+composer.phar
+/vendor/
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
 
 # =========================
 # Operating System Files
