@@ -37,9 +37,10 @@ $opensans:       'Work Sans', sans-serif;
 
 //imported fonts
 $fontawesome:    'FontAwesome';
-$neutrabook:"NeutraBook";
-$archer:"Archer";
-$stranger:"Stranger";
+$neutrabook:"NeutraBook",sans-serif;
+$archer:"Archer", serif;
+$stranger:"Stranger", serif;
+.stranger{font-family:$stranger;}
 //////////-----------------///////////
 
 // For an explanation of why "sans-serif" is at the end of this list, see
