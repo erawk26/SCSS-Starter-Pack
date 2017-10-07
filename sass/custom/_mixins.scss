@@ -40,9 +40,7 @@
   -ms-#{ieflexvalue($prop)}: ieflexvalue($value);
   #{$prop}: $value;
 }
-@mixin flex-grid( $num:3, $x:5px, $y:$x, $j:flex-start, $a:flex-start ) {
-  //make flex columns with spacing
-  @include flex($j,$a,$wrap:wrap);
+@mixin flex-grid($num:3,$x: 4%,$y:$x) {
   margin-top: -$y;
   margin-left: -$x;
   width:auto;
@@ -53,6 +51,26 @@
     @include flexchild(1, 0, 0);
     min-width:calc((99.5% / #{$num}) - #{$x});
     max-width:calc((100.5% / #{$num}) - #{$x});
+  }
+}
+@mixin mobile {//Media Queries
+  @media (max-width: #{$mobile-breakpoint - 1px}) {
+    @content;
+  }
+}
+@mixin not-mobile {
+  @media (min-width: #{$mobile-breakpoint}){
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$mobile-breakpoint}) and (max-width: #{$tablet-breakpoint - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-breakpoint}) {
+    @content;
   }
 }
 @function z($name) {

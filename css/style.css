@@ -3,42 +3,6 @@
   font-family: "Stranger", serif;
 }
 
-/* line 43, ../sass/custom/_vars.scss */
-.after {
-  position: relative;
-}
-/* line 45, ../sass/custom/_vars.scss */
-.after:after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/* line 55, ../sass/custom/_vars.scss */
-.before {
-  position: relative;
-}
-/* line 57, ../sass/custom/_vars.scss */
-.before:before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/*  values:
-    $display: flex | inline-flex
-    $direction: row(default) | row-reverse | column | column-reverse
-    $wrap: nowrap(default) | wrap | wrap-reverse
-    $justify: flex-start(default) | flex-end | center | space-between | space-around
-    $align: flex-start | flex-end | center | baseline | stretch (default)
-    $aligncontent: flex-start | flex-end | center | space-between | space-around | stretch (default)
-*/
 /* line 1, ../sass/custom/_globals.scss */
 * {
   box-sizing: border-box;
@@ -110,19 +74,19 @@ a:hover, a:visited, a:active, a:focus {
   color: #00633f;
 }
 
-/* line 2, ../sass/custom/_mixins.scss */
+/* line 132, ../sass/custom/_mixins.scss */
 input.form-control::-webkit-input-placeholder {
   color: white;
 }
-/* line 5, ../sass/custom/_mixins.scss */
+/* line 135, ../sass/custom/_mixins.scss */
 input.form-control:-moz-placeholder {
   color: white;
 }
-/* line 8, ../sass/custom/_mixins.scss */
+/* line 138, ../sass/custom/_mixins.scss */
 input.form-control::-moz-placeholder {
   color: white;
 }
-/* line 11, ../sass/custom/_mixins.scss */
+/* line 141, ../sass/custom/_mixins.scss */
 input.form-control:-ms-input-placeholder {
   color: white;
 }
